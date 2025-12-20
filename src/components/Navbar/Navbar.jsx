@@ -12,21 +12,21 @@ const Navbar = (props) => {
     <nav className="fixed z-50 w-full p-2 px-3 shadow-md bg-slate-100 border-b-4 border-b-white flex items-center gap-3">
 
   {/* Logo */}
-  <img src={logo} alt="Logo" className="w-12 flex-shrink-0" />
+  <img src={logo} alt="Logo" className="w-12 shrink-0" />
 
   {/* Location Search */}
-  <div className="relative ml-3 flex-shrink-0">
+  <div className="relative ml-3 shrink-0">
     <img src={search} alt="" className="absolute top-4 left-2 w-5" />
     <input
       type="text"
       placeholder="Search city, area or locality..."
-      className="w-[120px] sm:w-[180px] md:w-[240px] p-3 pl-8 pr-8 border-2 border-black rounded-md focus:outline-none focus:border-teal-300"
+      className="w-30 sm:w-45 md:w-60 p-3 pl-8 pr-8 border-2 border-black rounded-md focus:outline-none focus:border-teal-300"
     />
     <img src={arrow} alt="" className="absolute top-4 right-3 w-5 cursor-pointer" />
   </div>
 
   {/* Main Search (flex-grow) */}
-  <div className="relative flex-grow mx-2">
+  <div className="relative grow mx-2">
     <input
       placeholder="Find Cars, Mobile Phones, and More..."
       className="w-full p-3 border-2 border-black rounded-md focus:outline-none focus:border-teal-300"
@@ -41,7 +41,7 @@ const Navbar = (props) => {
   </div>
 
   {/* Right Section */}
-  <div className="flex items-center gap-5 flex-shrink-0">
+  <div className="flex items-center gap-5 shrink-0">
 
     <div className="flex items-center gap-1 cursor-pointer">
       <p className="font-bold">English</p>
