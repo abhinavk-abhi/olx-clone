@@ -32,6 +32,28 @@ li{
     display: none;
 }
 
+.profile .dropdown{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    background: #c7c0c0 ;
+    padding: 18px 22px;
+    border-radius: 2px;
+    text-decoration: underline;
+    z-index: 1;
+    display: none;
+}
+
+.profile .dropdown p{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.username:hover .dropdown{
+    display: inline;
+}
+
 @media (max-width:767px){
     .location-search{
         display: none;

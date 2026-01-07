@@ -5,7 +5,7 @@ import search from '../../assets/search1.svg'
 import arrow from '../../assets/arrow-down.svg'
 import searchwt from '../../assets/search.svg'
 import {useAuthState} from 'react-firebase-hooks/auth'
-import { auth } from '../../config/firebase.config'
+import { auth, logout } from '../../config/firebase.config'
 import addBtn from '../../assets/addButton.png'
 
 
@@ -55,14 +55,18 @@ const Navbar = (props) => {
       <img src={arrow} alt="" className="w-5" />
     </div>
 
-
+    <div className='profile'>
     {!user ? (
-      <p className='font-bold underline ml-5 cursor-pointer' style={{color : "#002f34"}}>Login</p>
+      <p onClick={toggleModal} className='font-bold underline ml-5 cursor-pointer' style={{color : "#002f34"}}  >Login</p>
     ):(
-      <div className='relative' >
+      <div className='relative username' >
         <p style={{color : "#002f34"}} className='font-bold ml-5 cursor-pointer'>{user.displayName?.split(' ')[0]}</p>
+        <div className="dropdown">
+          <p onClick={()=> {logout()}}>Sign Out</p>
+        </div>
       </div>
     )}
+    </div>
    
     <img src={addBtn} 
     onClick={user ? toggleModalSell : toggleModal}

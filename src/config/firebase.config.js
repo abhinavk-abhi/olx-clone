@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
-import {getAuth , GoogleAuthProvider} from 'firebase/auth'
+import {getAuth , GoogleAuthProvider , signOut} from 'firebase/auth'
 import {getStorage} from 'firebase/storage';
 import {collection, getDocs, getFirestore} from 'firebase/firestore';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAfOqMywN6vyBjiYNKTpVpytHjSdrBTOqw",
@@ -18,6 +19,9 @@ const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
 const storage = getStorage()
 const fireStore = getFirestore()
+const logout = async ()=>{
+    signOut(auth)
+}
 
 
 const fetchFromFireStore = async () =>{
@@ -41,5 +45,6 @@ export {
     provider,
     storage,
     fireStore,
-    fetchFromFireStore
+    fetchFromFireStore,
+    logout
 }
